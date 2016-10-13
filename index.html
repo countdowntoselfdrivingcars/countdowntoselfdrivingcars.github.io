@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="assets/flipclock.css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script src="assets/flipclock.js"></script>	
+	</head>
+
+	<script type="text/javascript">
+		var clock;
+		$(document).ready(function() {
+			// Grab the current date
+			var currentDate = new Date();
+			// Set some date in the future. In this case, it's always Jan 1
+			var futureDate  = new Date(2018, 6, 1);
+			// Calculate the difference in seconds between the future and current date
+			var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+			// Instantiate a coutdown FlipClock
+			clock = $('.clock1').FlipClock(diff, {
+			  clockFace: 'YearlyCounter',
+			  countdown: true
+			});
+		});
+	</script>   
+	<script type="text/javascript">
+		var clock;
+		$(document).ready(function() {
+			// Grab the current date
+			var currentDate = new Date();
+			// Set some date in the future. In this case, it's always Jan 1
+			var futureDate  = new Date(2019, 12, 31);
+			// Calculate the difference in seconds between the future and current date
+			var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+			// Instantiate a coutdown FlipClock
+			clock = $('.clock2').FlipClock(diff, {
+			  clockFace: 'YearlyCounter',
+			  countdown: true
+			});
+		});
+	</script>
+
+	<body>
+
+
+	<table style="width:100%">
+		<tr>
+			<th>Prediction</th>
+			<th></th> 
+		</tr>
+		<tr>
+			<td>2016.06.01 &nbsp; &nbsp; <a href="http://www.forbes.com/sites/briansolomon/2016/06/02/elon-musk-we-are-less-than-two-years-from-complete-car-autonomy/">ELON MUSK: "Two years from full autonomy"</a></td>
+			<td><div class="clock1" style="margin:2em;"></div></td>
+		</tr>
+		<tr>
+			<td>2016.06.15 &nbsp; &nbsp; <a href="http://www.businessinsider.com/report-10-million-self-driving-cars-will-be-on-the-road-by-2020-2015-5-6">BUSINESS INSIDER: "Full autonomy will debut in 2019"</a></td>
+			<td><div class="clock2" style="margin:2em;"></div></td>
+		</tr>
+	</table>
+
+
+Years are counted as 52 weeks.
+
+A fully autonomous vehicle can drive from point A to point B and encounter the entire range of on-road scenarios without needing any interaction from the driver
+        
+	</body>
+</html>
